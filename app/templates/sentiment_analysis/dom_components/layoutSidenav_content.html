@@ -1,0 +1,111 @@
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid px-4">
+            <h2 class="mt-4">Dashboard</h2>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Company Name: {{company.name_company}}</li>
+            </ol>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    DataTable Recorded Audios
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Audio</th>
+                                <th>Score</th>
+                                <th>Audio Text</th>
+                                <th>Analysis</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Audio</th>
+                                <th>Score</th>
+                                <th>Audio Text</th>
+                                <th>Analysis</th>
+                                <th>Delete</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                          {% for record in records %}
+                            <tr>
+                              <td>
+                                <div class="level-item has-text-centered">
+                                  <div>
+                                    <audio src="{{record.audio_path.url}}" controls></audio>
+                                  </div>
+                                </div>
+                              </td>
+                              <td> <div id="score_sentiment_analysis"> {{record.score_text}}</div> </td>
+                              <td> <div id="audio_text_sentiment_analysis"> <p> {{record.audio_text}} </p> </div> </td>
+                              <td> 
+                                <button value={{record.id}} class="btn btn-primary btnSelect" style="display: inline-block;">
+                                  Analyze
+                                  <div style="display: none; vertical-align:middle" class="clearfix">
+                                    <div class="spinner-border float-right" role="status">
+                                      <span class="sr-only">Loading...</span>
+                                    </div>
+                                  </div>
+                                </button>  
+                              </td>
+                              <td> <button value={{record.id}} class="btn btn-primary btn-danger">Delete</button> </td> 
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm px-4">
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
+              <div class="columns">
+                <div class="column is-offset-4 is-4">
+                  <h2 class="title">Record audio</h2>
+                  <div id="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Recorded successfully!</strong> You can analyze your audio clicking on submit button
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <div style="display: none;" id="audioServerSuccessfully" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>audio sent to server successfully! </strong> can record more audio
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="field">
+                      <div
+                        class="control has-icons-left has-icons-right"
+                        style="margin-top: 1rem"
+                      >
+                        <audio id="recordAudio" class="video-js vjs-default-skin"></audio>
+                      </div>
+                      <div class="control" style="margin-top: 1rem">
+                        <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center justify-content-between small">
+                <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                <div>
+                    <a href="#">Privacy Policy</a>
+                    &middot;
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

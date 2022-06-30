@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% block title %}WHA Health Analytics Dashboard{% endblock %}
+
+
+{% block links %}
+  <!-- Custom styles for this template-->
+  <link href="/static/static/css/styles.css" rel="stylesheet">
+{% endblock %}
+
+{% block css %}
+  <link href="/static/static/assets/css/video-js.css" rel="stylesheet" />
+  <link href="/static/static/assets/css/all.min.css" rel="stylesheet" />
+  <link href="/static/static/assets/css/videojs.wavesurfer.min.css" rel="stylesheet"/>
+  <link href="/static/static/assets/css/videojs.record.css" rel="stylesheet" />
+
+
+  <style>
+  /* change player background color */
+  #recordAudio {
+      background-color: #3e8ed0;
+  }
+  </style>
+{% endblock css %}
+
+{% block dynamic_body %}
+  {% include 'sentiment_analysis/dom_components/layoutSidenav_content.html'%}
+{% endblock %}
+
+<!--additional js-->
+{% block js %}
+<!-- js-->
+<script src="/static/static/assets/js/audio_recorder_library/jquery.min.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/csrftoken.js"> </script>
+<script src="/static/static/assets/js/audio_recorder_library/video.min.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/RecordRTC.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/adapter-latest.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/wavesurfer.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/wavesurfer.microphone.min.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/videojs.wavesurfer.min.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/videojs.record.min.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/browser-workaround.js"></script>
+<script src="/static/static/assets/js/audio_recorder_library/real.recording.js"></script>
+<script src="/static/static/assets/js/sentiment_analysis/audio-analyze.js"></script>
+{% endblock js %}
