@@ -1,3 +1,4 @@
+import os
 from importlib.resources import path
 from itertools import product
 from django.shortcuts import render
@@ -13,6 +14,7 @@ from wha_products.models import Products
 import speech_recognition as sr
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_audio
 from textblob import TextBlob
+import nltk
 
 # Create your views here.
 
@@ -40,7 +42,6 @@ def audio_recorder(request):
 
             # append text to the audio object
             record.audio_text = audio_text 
-
             # Save into Database 
             record.save()
             messages.success(request, 'Audio recorded, successfully added!')
@@ -84,9 +85,9 @@ r = sr.Recognizer()
 
 def speech_to_text_google(path):
     
-    input_audio = "./media/" + str(path)
-    ffmpeg_extract_audio(input_audio, "./media/records/output.wav")
-    with sr.AudioFile("./media/records/output.wav") as source:
+    input_audio = "/vol/web/media/" + str(path)
+    ffmpeg_extract_audio(input_audio, "/vol/web/media/records/output.wav")
+    with sr.AudioFile("/vol/web/media/records/output.wav") as source:
         # listen for the data (load audio to memory)
         audio_data = r.record(source)
         # recognize (convert from speech to text)
@@ -144,9 +145,15 @@ def audio_delete(request):
     try:
         # get text from correspondent audio id
         record = Audios.objects.get(id = id_audio)
-        record.delete()
-        messages.success(request, "Record deleted successfully!")
+        path_audio = Audios.objects.filter(id = id_audio)[0]
+        path_audio = str(path_audio.audio_path)
+        path_audio = os.path.join("/vol/web/media", path_audio)
+        
+        if os.path.exists(path_audio):
+            os.remove(path_audio)
+            record.delete()
 
+        messages.success(request, "Record deleted successfully!")        
         response = {}
         response["status"] = "success"
         response["data"] = {

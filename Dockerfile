@@ -22,9 +22,11 @@ RUN python -m venv /py && \
         build-base postgresql-dev musl-dev linux-headers && \
     /py/bin/pip install -r /requirements.txt && \
     apk del .tmp-deps && \
+    /py/bin/python -m textblob.download_corpora && \
+    cp -R /root/nltk_data/ /py && \
     adduser --disabled-password --no-create-home app && \
     mkdir -p /vol/web/static && \
-    mkdir -p /vol/web/media && \
+    mkdir -p /vol/web/media/records && \
     chown -R app:app /vol && \
     chmod -R 755 /vol 
 
