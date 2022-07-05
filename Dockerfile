@@ -8,6 +8,8 @@ ENV PYTHONUNBUFFERED 1
 # copy our requirements.txt to our docker image
 COPY ./requirements.txt /requirements.txt
 COPY ./app /app
+COPY ./scripts /scripts
+
 
 # The working directory of new containers made out the image should be /app
 WORKDIR /app
@@ -28,11 +30,15 @@ RUN python -m venv /py && \
     mkdir -p /vol/web/static && \
     mkdir -p /vol/web/media/records && \
     chown -R app:app /vol && \
-    chmod -R 755 /vol 
+    chmod -R 755 /vol && \
+    chmod -R +x /scripts 
 
+COPY ./data/web/static/ /vol/web/static
 # add to our virtual environment to our system path, then whenever we run a command 
 # that uses python will automatically use the python inside the virtual environment
 ENV PATH="/scripts:/py/bin:$PATH"
 
 # Swithes the user from the ROOT to the app user
 USER app
+
+CMD ["run.sh"]
