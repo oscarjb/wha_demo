@@ -1,5 +1,17 @@
 server {
+    
     listen ${LISTEN_PORT};
+
+    return 301 https://nlp.whacloud.com$request_uri;
+}
+
+
+server {
+
+    listen ${LISTEN_PORT_SSL} ssl;
+    
+    ssl_certificate /certs/fullchain.pem;
+    ssl_certificate_key /certs/privkey.pem;
 
     location /static {
         alias /vol/static;
