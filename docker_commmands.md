@@ -1,0 +1,2 @@
+- docker-compose -f <filename> build : Build the docker image
+  - example -> docker-compose -f docker-compose-deploy.yml build
