@@ -1,0 +1,54 @@
+body {
+    background: white;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+}
+
+header {
+    background: url(/static/static/assets/img/prueba1/fondo1.jpg);
+    color: #38b6ff;
+    background-size: cover;
+    background-position: 0 0;
+    position: relative;
+    width: 98.5%;
+    height: 21rem;
+
+
+}
+
+header .titulo {
+    position: absolute;
+    top: 5rem;
+    position: relative;
+    margin-left: 2rem;
+}
+
+header .titulo .nombre {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+header .titulo .nombre span {
+    font-weight: 300;
+    font-style: italic;
+}
+
+header .titulo h3 {
+    font-weight: 300;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.container {
+    padding: 135px;
+}
+
+.container .heading-title {
+    color: #38b6ff;
+}
+
+.container .carousel-inner {
+    color: #38b6ff;
+}
