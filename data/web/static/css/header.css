@@ -18,24 +18,24 @@ header {
 
 }
 
-header .titulo {
+header .title {
     position: absolute;
     top: 5rem;
     position: relative;
     margin-left: 2rem;
 }
 
-header .titulo .nombre {
+header .title .name {
     font-size: 3rem;
     font-weight: 700;
 }
 
-header .titulo .nombre span {
+header .title .name span {
     font-weight: 300;
     font-style: italic;
 }
 
-header .titulo h3 {
+header .title h3 {
     font-weight: 300;
     font-size: 0.8rem;
     font-style: italic;
