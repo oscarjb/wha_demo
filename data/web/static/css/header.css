@@ -2,24 +2,18 @@ body {
     background: white;
     color: black;
     font-family: 'Open Sans', sans-serif;
-    font-size: 0.9rem;
-    margin-top: 0.8rem;
+    font-size: 0.9rem;        
 }
 
 header {
     background: url(/static/static/assets/img/prueba1/fondo1.jpg);
     color: #38b6ff;
-    background-size: cover;
-    background-position: 0 0;
-    position: relative;
-    width: 98.5%;
-    height: 21rem;
-
-
+    background-size: cover;   
+    height: 20rem;
+    width: auto;
 }
 
 header .title {
-    position: absolute;
     top: 5rem;
     position: relative;
     margin-left: 2rem;
@@ -39,10 +33,6 @@ header .title h3 {
     font-weight: 300;
     font-size: 0.8rem;
     font-style: italic;
-}
-
-.container {
-    padding: 135px;
 }
 
 .container .heading-title {

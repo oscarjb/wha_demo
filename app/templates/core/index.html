@@ -5,19 +5,21 @@
 
 
 {% block links %}
-  <!-- Custom styles for this template-->
-  <link href="/static/static/css/header.css" rel="stylesheet">
-  <link href="/static/static/css/styles.css" rel="stylesheet">   
+  <!-- Custom styles for this template-->  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap"
+    rel="stylesheet">
+  <link href="/static/static/css/styles.css" rel="stylesheet"> 
   
 {% endblock %}
 
 {% block css %}
   <link href="/static/static/assets/css/all.min.css" rel="stylesheet" />
+  <link href="/static/static/css/header.css" rel="stylesheet">
 {% endblock css %}
 
-{% block dynamic_body %}
-   {% include 'dom_components/layoutSidenav_content.html'%}
-   {% include 'dom_components/layoutSidenav_nav.html'%}
+{% block dynamic_body %}   
+  {% include 'dom_components/layoutSidenav_content.html'%}
+  {% include 'dom_components/layoutSidenav_nav.html'%}
 {% endblock %}
 
 <!--additional js-->
