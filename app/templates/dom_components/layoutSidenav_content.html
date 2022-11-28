@@ -1,21 +1,7 @@
 <div id="layoutSidenav_content">
     <main>
         <!--Header-->
-        {% if user.username == 'julian' %}
-        <div class="header" style="background: url(/static/static/assets/img/prueba1/backgroundMedical.jpg); background-size: cover;">
-        {% endif %}
-        {% if user.username == 'comercio' %}
-        <div class="header"
-            style="background: url(/static/static/assets/img/prueba1/backgroundTrade.jpg); background-size: cover;">
-        {% endif %}
-        {% if user.username == 'restaurante' %}
-        <div class="header"
-            style="background: url(/static/static/assets/img/prueba1/backgroundRestaurant.jpg); background-size: cover;">
-        {% endif %}
-        {% if user.username == 'turismo' %}
-        <div class="header"
-            style="background: url(/static/static/assets/img/prueba1/backgroundTravel.jpg); background-size: cover; color: white;">
-        {% endif %}
+        <div class="header" style="background: url(/static/static/assets/img/prueba1/{{backgroundHeader}}.jpg); background-size: cover;">        
             <header class="row">
                 <div class="title">
                     <h1 class="name">WHA <span>Health Analytics</span></h1>
