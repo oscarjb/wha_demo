@@ -1,15 +1,30 @@
 <div id="layoutSidenav_content">
     <main>
-        
-        <div class="header">
+        <!--Header-->
+        {% if user.username == 'julian' %}
+        <div class="header" style="background: url(/static/static/assets/img/prueba1/backgroundMedical.jpg); background-size: cover;">
+        {% endif %}
+        {% if user.username == 'comercio' %}
+        <div class="header"
+            style="background: url(/static/static/assets/img/prueba1/backgroundTrade.jpg); background-size: cover;">
+        {% endif %}
+        {% if user.username == 'restaurante' %}
+        <div class="header"
+            style="background: url(/static/static/assets/img/prueba1/backgroundRestaurant.jpg); background-size: cover;">
+        {% endif %}
+        {% if user.username == 'turismo' %}
+        <div class="header"
+            style="background: url(/static/static/assets/img/prueba1/backgroundTravel.jpg); background-size: cover; color: white;">
+        {% endif %}
             <header class="row">
                 <div class="title">
                     <h1 class="name">WHA <span>Health Analytics</span></h1>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3><!--phrase of the company WHA-->
                 </div>
             </header>
         </div>
         
+        <!--About us-->
         <div class="container p-5">
             <div class="row">
                 <div class="col col-xl-5 col-lg-5 m-auto col-md-12 col-sm-12 col-12">
@@ -31,10 +46,8 @@
                     <img src="/static/static/assets/img/prueba1/11.jpg" class="w-100" alt="screen">
                 </div>
             </div>
-        </div>
-        
-        
-        
+        </div>  
+        <!--Carousel and strategic objectives-->        
         <div class="container p-5">
             <div class="row">
                 <div class="col col-xl-9 col-lg-9 m-auto col-md-12 col-sm-12 col-12">
@@ -42,30 +55,31 @@
                         <div id="slideshow" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae
-                                        consequuntur dolores
-                                        laudantium vel suscipit accusantium rem veritatis reiciendis atque! Accusantium sed
-                                        recusandae mollitia
-                                        cum quo! Esse accusantium eligendi a optio!</p>
-                                    <img src="/static/static/assets/img/prueba1/1.jpg" class="w-100" alt="">
+                                    <p class="text-center"> <b>Publicitar a través de los diferentes medios y redes sociales el uso de las herramientas de AutoML y las ventajas que
+                                    ofrecen su uso dentro de varios sectores industriales.</b></p>
+                                    <img src="/static/static/assets/img/prueba1/strategicObjectives1.jpg" class="w-100" alt="">
         
                                 </div>
                                 <div class="carousel-item">
-                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum
-                                        facilis ab porro
-                                        assumenda quidem sint ea impedit numquam soluta atque fuga officia, eveniet deleniti
-                                        quam consequuntur
-                                        eligendi sit delectus totam.</p>
-                                    <img src="/static/static/assets/img/prueba1/2.jpg" class="w-100" alt="">
+                                    <p class="text-center"><br><b>Soportar el desarrollo de la plataforma WHA desde un enfoque cloud híbrido privado y público.</b></p>
+                                    <img src="/static/static/assets/img/prueba1/strategicObjectives2.jpg" class="w-100" alt="">
         
                                 </div>
                                 <div class="carousel-item">
-                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas
-                                        libero hic error
-                                        sapiente, beatae, sint odio eligendi rerum impedit optio labore, commodi provident
-                                        aut ullam fuga.
-                                        Fugit, hic odio.</p>
-                                    <img src="/static/static/assets/img/prueba1/3.jpg" class="w-100" alt="">
+                                    <p class="text-center"><b>Acrecentar la competitividad a través de la propuesta de algoritmos vanguardistas del estado del arte y la innovación de
+                                    productos. </b></p>
+                                    <img src="/static/static/assets/img/prueba1/strategicObjectives3.jpg" class="w-100" alt="">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <p class="text-center"><br><b>Implementar y mantener un modelo de gestión empresarial basado en un modelo de gestión de la calidad.</b></p>
+                                    <img src="/static/static/assets/img/prueba1/strategicObjectives4.jpg" class="w-100" alt="">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <p class="text-center"><b>Captar clientes industriales de diferentes quehaceres que requieran soluciones de AutoML en los ámbitos de visión por
+                                    computadora y procesamiento del lenguaje natural.</b></p>
+                                    <img src="/static/static/assets/img/prueba1/strategicObjectives5.jpg" class="w-100" alt="">
                                 </div>
                             </div>
         
@@ -79,68 +93,66 @@
         
                                 <button type="button" data-bs-target="#slideshow" data-bs-slide-to="2" aria-current="true"
                                     aria-label="Slide #3"></button>
+                                
+                                <button type="button" data-bs-target="#slideshow" data-bs-slide-to="3" aria-current="true"
+                                    aria-label="Slide #4"></button>
+                                
+                                <button type="button" data-bs-target="#slideshow" data-bs-slide-to="4" aria-current="true"
+                                    aria-label="Slide #5"></button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
-        
+        <!--Mission-->       
         <div class="container p-5">
             <div class="row">
                 <div class="col col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
-                    <img src="/static/static/assets/img/prueba1/12.jpg" class="w-100" alt="screen">
+                    <img src="/static/static/assets/img/prueba1/mission.png" class="w-100" alt="screen">
                 </div>
         
                 <div class="col col-xl-5 col-lg-5 m-auto col-md-12 col-sm-12 col-12">
                     <div class="crumina-module crumina-heading">
-                        <h2 class="heading-title">Mision</h2>
-                        <p class="heading-text" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Distinctio animi facere, id vitae unde aliquam cumque eveniet at expedita
-                            voluptates rem delectus necessitatibus neque quam earum blanditiis ea perferendis laboriosam!
+                        <h2 class="heading-title text-center">Misión</h2>
+                        <p class="heading-text" style="text-align: justify;">WHA es una empresa que se dedica a dar soluciones de AutoML (Machine Learning automatizado para predicción,
+                        clasificación y regresión) en diversas aplicaciones industriales, a través del uso de técnicas de Visión por
+                        Computadora, Procesamiento del Lenguaje Natural, Modelos clásicos de regresión y clasificación, matemáticas y
+                        estadística entre otras, para facilitar la toma de decisiones estratégicas en la generación de valor, aumento de la
+                        competitividad, descubrimiento de mercados, gestión del riesgo y gestión de la calidad.
                         </p>
         
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita vel pariatur nam optio delectus
-                            labore, repudiandae necessitatibus reiciendis! Hic, voluptatem sunt ullam vero commodi fugiat
-                            sapiente itaque consequuntur quod ratione!
-        
+                        <p>        
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
-        
+        <!--Vision-->        
         <div class="container p-5">
             <div class="row">
                 <div class="col col-xl-5 col-lg-5 m-auto col-md-12 col-sm-12 col-12">
                     <div class="crumina-module crumina-heading">
-                        <h2 class="heading-title">Vision</h2>
-                        <p class="heading-text" style="text-align: justify;">Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Distinctio animi facere, id vitae unde aliquam cumque eveniet at expedita
-                            voluptates rem delectus necessitatibus neque quam earum blanditiis ea perferendis laboriosam!
+                        <h2 class="heading-title text-center">Visión</h2>
+                        <p class="heading-text" style="text-align: justify;">El horizonte temporal de WHA es bianual, por lo tanto, en el año 2026 WHA se consolidará como una compañía líder en el
+                        mercado de soluciones de AutoML en las naciones de Colombia y España. Igualmente, será reconocida por sus contribuciones
+                        en el desarrollo de las pequeñas y medianas empresas en diferentes sectores industriales, a través de la aplicación de
+                        algoritmos vanguardistas que la industria demande. Además, su plataforma whacloud.com se convertirá en una herramienta
+                        indispensable para la toma de decisiones gerenciales de nuestros clientes.
                         </p>
         
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe sunt laboriosam dolor commodi
-                            distinctio
-                            quidem laborum minima blanditiis eligendi, quibusdam nobis in, alias, eum veniam debitis nulla
-                            assumenda
-                            aliquid exercitationem.
-        
+                        <p>        
                         </p>
                     </div>
                 </div>
         
                 <div class="col col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
-                    <img src="/static/static/assets/img/prueba1/13.png" class="w-100" alt="screen">
+                    <img src="/static/static/assets/img/prueba1/vision.png" class="w-100" alt="screen">
                 </div>
             </div>
         </div>
     </main>
-    
+    <!--Footer-->
     <footer class="py-4 bg-light mt-auto">
         <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">

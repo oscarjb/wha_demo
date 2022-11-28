@@ -5,10 +5,8 @@ body {
     font-size: 0.9rem;        
 }
 
-header {
-    background: url(/static/static/assets/img/prueba1/fondo1.jpg);
-    color: #38b6ff;
-    background-size: cover;   
+header {    
+    color: #38b6ff;    
     height: 20rem;
     width: auto;
 }
@@ -40,5 +38,5 @@ header .title h3 {
 }
 
 .container .carousel-inner {
-    color: #38b6ff;
+    color: #38b6ff;    
 }
