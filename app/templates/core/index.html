@@ -1,20 +1,31 @@
 {% extends "base.html" %}
 
 
-{% block title %}WHA Health Analytics Dashboard{% endblock %}
+{% block title %} WHA Health Analytics Dashboard{% endblock %}
 
 
 {% block links %}
-  <!-- Custom styles for this template-->
-  <link href="/static/static/css/styles.css" rel="stylesheet">
+  <!-- Custom styles for this template-->  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap"
+    rel="stylesheet">
+  <link href="/static/static/css/styles.css" rel="stylesheet"> 
   
 {% endblock %}
 
 {% block css %}
   <link href="/static/static/assets/css/all.min.css" rel="stylesheet" />
+  <link href="/static/static/css/header.css" rel="stylesheet">
 {% endblock css %}
 
-{% block dynamic_body %}
+{% block dynamic_body %}   
+  {% include 'dom_components/layoutSidenav_content.html'%}
   {% include 'dom_components/layoutSidenav_nav.html'%}
 {% endblock %}
+
+<!--additional js-->
+{% block js %}
+<!-- js-->
+<script src="/static/static/assets/js/dom_components/jquery.js"></script>
+<script src="/static/static/assets/js/dom_components/title_effect.js"></script>
+{% endblock js %}
 

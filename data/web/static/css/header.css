@@ -1,0 +1,44 @@
+body {
+    background: white;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;        
+}
+
+header {
+    background: url(/static/static/assets/img/prueba1/fondo1.jpg);
+    color: #38b6ff;
+    background-size: cover;   
+    height: 20rem;
+    width: auto;
+}
+
+header .title {
+    top: 5rem;
+    position: relative;
+    margin-left: 2rem;
+}
+
+header .title .name {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+header .title .name span {
+    font-weight: 300;
+    font-style: italic;
+}
+
+header .title h3 {
+    font-weight: 300;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.container .heading-title {
+    color: #38b6ff;
+}
+
+.container .carousel-inner {
+    color: #38b6ff;
+}
