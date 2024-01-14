@@ -130,5 +130,10 @@ dmypy.json
 
 /data/media
 
+# Keys
 *.key
 *.crt
+
+# Audio
+*.wav
+*.webm
