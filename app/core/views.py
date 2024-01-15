@@ -11,14 +11,25 @@ from wha_products.models import Company
 
 class Index(View):
     template = 'core/index.html'
-
+    
     def get(self, request):
         
         company = {}
         if Company.objects.filter(user_company=request.user):
             company = Company.objects.filter(user_company=request.user)[0]
-        
-        return render(request, self.template, {"company" : company})
+             
+            if  company.name_company=='salud':
+                backgroundHeader='backgroundMedical'
+            elif company.name_company=='comercio':
+                 backgroundHeader='backgroundTrade'
+            elif company.name_company=='restaurante':
+                 backgroundHeader='backgroundRestaurant'
+            elif company.name_company=='turismo':
+                 backgroundHeader='backgroundTravel'
+        else:
+            backgroundHeader='backgroundTravel'
+
+        return render(request, self.template, {'company' : company, 'backgroundHeader':backgroundHeader,})
 
 class Register_user(View):
 
